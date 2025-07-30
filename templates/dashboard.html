@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bosh sahifa</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+        }
+
+        .navbar {
+            background-color: #4CAF50;
+            padding: 15px 25px;
+            color: white;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .btn-logout {
+            background-color: #f44336;
+            border: none;
+            color: white;
+            padding: 8px 14px;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .btn-logout:hover {
+            background-color: #d73833;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div>Bosh sahifa</div>
+        <div>
+            <a href="#">Profil</a>
+            <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit" class="btn-logout">Chiqish</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Xush kelibsiz!</h1>
+        <p>Siz tizimga muvaffaqiyatli kirgansiz. Bu sizning shaxsiy boshqaruv panelingiz.</p>
+    </div>
+
+</body>
+</html>
